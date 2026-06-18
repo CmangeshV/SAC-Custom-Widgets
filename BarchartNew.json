@@ -4,12 +4,13 @@
   "name": "Custom Bar Chart",
   "description": "A bar chart built with custom widget",
   "newInstancePrefix": "CustomBarChart",
-  "icon": "https://your-username.github.io/SAC-Custom-Widgets/barchart/icon.png",
+  "icon": "",
   "webcomponents": [
     {
       "kind": "main",
       "tag": "com-custom-barchart",
-      "url": "https://https://github.com/CmangeshV/SAC-Custom-Widgets/blob/main/BarchartNew.js",
+      "url": "https://raw.githubusercontent.com/CmangeshV/SAC-Custom-Widgets/main/BarchartNew.js",
+      "integrity": "sha256-+JMVj4XPjFMS9XAQ79Aahl2si52x8Nd4U/MV80/a2og=",
       "ignoreIntegrity": true
     }
   ],
