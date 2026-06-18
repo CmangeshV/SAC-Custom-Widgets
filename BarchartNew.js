@@ -19,10 +19,8 @@
       this._color = "#4A90E2";
     }
 
-    // Called before SAC updates properties
     onCustomWidgetBeforeUpdate(changedProps) {}
 
-    // Called after SAC updates properties
     onCustomWidgetAfterUpdate(changedProps) {
       if ("chartData" in changedProps) {
         try {
@@ -41,7 +39,6 @@
       this._render();
     }
 
-    // Property setters/getters
     get chartData() { return JSON.stringify(this._data); }
     set chartData(value) {
       try { this._data = JSON.parse(value); } catch { this._data = []; }
@@ -51,7 +48,6 @@
     get barColor() { return this._color; }
     set barColor(value) { this._color = value; this._render(); }
 
-    // Script API method
     setData(jsonString) {
       this.chartData = jsonString;
     }
@@ -70,7 +66,6 @@
       const chartH = height - margin.top - margin.bottom;
       const maxVal = Math.max(...this._data.map(d => d.value));
 
-      // Build SVG manually (no D3 dependency)
       const barWidth = chartW / this._data.length - 5;
       const bars = this._data.map((d, i) => {
         const barH = (d.value / maxVal) * chartH;
