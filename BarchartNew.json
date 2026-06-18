@@ -2,14 +2,14 @@
   "id": "com.custom.barchart",
   "version": "1.0.0",
   "name": "Custom Bar Chart",
-  "description": "A bar chart built with D3.js",
-  "icon": "https://your-server.com/widgets/barchart/icon.png",
+  "description": "A bar chart built with custom widget",
+  "newInstancePrefix": "CustomBarChart",
+  "icon": "https://your-username.github.io/SAC-Custom-Widgets/barchart/icon.png",
   "webcomponents": [
     {
       "kind": "main",
       "tag": "com-custom-barchart",
-      "url": "https://github.com/CmangeshV/SAC-Custom-Widgets/BarchartNew.js",
-      "integrity": "",
+      "url": "https://https://github.com/CmangeshV/SAC-Custom-Widgets/blob/main/BarchartNew.js",
       "ignoreIntegrity": true
     }
   ],
@@ -31,6 +31,11 @@
       "parameters": [
         { "name": "data", "type": "string" }
       ]
+    }
+  },
+  "events": {
+    "onClick": {
+      "description": "Fired when a bar is clicked"
     }
   }
 }
