@@ -1,0 +1,36 @@
+{
+  "id": "com.custom.barchart",
+  "version": "1.0.0",
+  "name": "Custom Bar Chart",
+  "description": "A bar chart built with D3.js",
+  "icon": "https://your-server.com/widgets/barchart/icon.png",
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-custom-barchart",
+      "url": "https://github.com/CmangeshV/SAC-Custom-Widgets/BarchartNew.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "chartData": {
+      "type": "string",
+      "description": "JSON string of chart data",
+      "default": ""
+    },
+    "barColor": {
+      "type": "string",
+      "description": "Bar fill color",
+      "default": "#4A90E2"
+    }
+  },
+  "methods": {
+    "setData": {
+      "description": "Set chart data",
+      "parameters": [
+        { "name": "data", "type": "string" }
+      ]
+    }
+  }
+}
