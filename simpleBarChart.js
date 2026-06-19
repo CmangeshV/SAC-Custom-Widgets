@@ -1,12 +1,25 @@
-console.log("CUSTOM WIDGET JS LOADED");
+(function () {
 
-customElements.define(
-    "com-demo-simplebarchart",
-    class extends HTMLElement {
+    class SimpleBarChart extends HTMLElement {
         connectedCallback() {
-            this.innerHTML = "Hello SAC";
+            this.innerHTML = "<h2>Hello SAC Widget</h2>";
         }
     }
-);
 
-console.log("CUSTOM ELEMENT REGISTERED");
+    class SimpleBarChartBuilder extends HTMLElement {
+        connectedCallback() {
+            this.innerHTML = "";
+        }
+    }
+
+    customElements.define(
+        "com-demo-simplebarchart",
+        SimpleBarChart
+    );
+
+    customElements.define(
+        "com-demo-simplebarchart-builder",
+        SimpleBarChartBuilder
+    );
+
+})();
