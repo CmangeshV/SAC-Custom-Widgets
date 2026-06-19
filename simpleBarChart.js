@@ -12,17 +12,11 @@
 
        onCustomWidgetAfterUpdate(changedProperties) {
 
-    console.log("changedProperties", changedProperties);
+     console.log("Object Keys");
+    console.log(Object.keys(this));
 
-    if (this.dataBindings) {
-        console.log("dataBindings", this.dataBindings);
-    }
-
-    if (this.dataBinding) {
-        console.log("dataBinding", this.dataBinding);
-    }
-
-    console.log("this", this);
+    console.log("Widget Object");
+    console.log(this);
 }
 
     customElements.define(
