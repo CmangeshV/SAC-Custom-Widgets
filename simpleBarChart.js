@@ -4,21 +4,24 @@
 
         constructor() {
             super();
-            this._props = {};
         }
 
         connectedCallback() {
-            this.render();
+            this.innerHTML = "<h2>Waiting for Data...</h2>";
         }
 
         onCustomWidgetAfterUpdate(changedProperties) {
-            this._props = { ...this._props, ...changedProperties };
-            this.render();
-        }
 
-        render() {
-            this.innerHTML =
-                `<h2>${this._props.title || "Bar Chart"}</h2>`;
+            console.log("After Update");
+
+            console.log(changedProperties);
+
+            if (changedProperties.dataBinding) {
+
+                console.log("DATA BINDING FOUND");
+
+                console.log(changedProperties.dataBinding);
+            }
         }
     }
 
