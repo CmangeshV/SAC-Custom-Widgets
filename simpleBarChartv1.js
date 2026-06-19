@@ -6,25 +6,27 @@
             this.innerHTML = "<h2>Check Console</h2>";
         }
 
-        onCustomWidgetAfterUpdate(changedProperties) {
+       onCustomWidgetAfterUpdate(changedProperties) {
 
-            console.log("===== AFTER UPDATE =====");
+    console.log("===== DATA BINDING =====");
 
-            console.log(changedProperties);
+    console.log(changedProperties.dataBinding);
 
-            console.log("THIS:", this);
+    if (changedProperties.dataBinding) {
 
-            console.log("KEYS:", Object.keys(this));
+        console.log("===== MESSAGES =====");
 
-            if (this.dataBindings) {
-                console.log("dataBindings:", this.dataBindings);
-            }
+        console.log(changedProperties.dataBinding.messages);
 
-            if (this.dataBinding) {
-                console.log("dataBinding:", this.dataBinding);
-            }
-        }
+        console.log(
+            JSON.stringify(
+                changedProperties.dataBinding,
+                null,
+                2
+            )
+        );
     }
+}
 
     customElements.define(
         "com-demo-simplebarchart",
