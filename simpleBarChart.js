@@ -10,20 +10,20 @@
             this.innerHTML = "<h2>Waiting for Data...</h2>";
         }
 
-        onCustomWidgetAfterUpdate(changedProperties) {
+       onCustomWidgetAfterUpdate(changedProperties) {
 
-            console.log("After Update");
+    console.log("changedProperties", changedProperties);
 
-            console.log(changedProperties);
-
-            if (changedProperties.dataBinding) {
-
-                console.log("DATA BINDING FOUND");
-
-                console.log(changedProperties.dataBinding);
-            }
-        }
+    if (this.dataBindings) {
+        console.log("dataBindings", this.dataBindings);
     }
+
+    if (this.dataBinding) {
+        console.log("dataBinding", this.dataBinding);
+    }
+
+    console.log("this", this);
+}
 
     customElements.define(
         "com-demo-simplebarchart",
