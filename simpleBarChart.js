@@ -1,25 +1,30 @@
 (function () {
 
     class SimpleBarChart extends HTMLElement {
-        connectedCallback() {
-            this.innerHTML = "<h2>Hello SAC Widget</h2>";
-        }
-    }
 
-    class SimpleBarChartBuilder extends HTMLElement {
+        constructor() {
+            super();
+            this._props = {};
+        }
+
         connectedCallback() {
-            this.innerHTML = "";
+            this.render();
+        }
+
+        onCustomWidgetAfterUpdate(changedProperties) {
+            this._props = { ...this._props, ...changedProperties };
+            this.render();
+        }
+
+        render() {
+            this.innerHTML =
+                `<h2>${this._props.title || "Bar Chart"}</h2>`;
         }
     }
 
     customElements.define(
         "com-demo-simplebarchart",
         SimpleBarChart
-    );
-
-    customElements.define(
-        "com-demo-simplebarchart-builder",
-        SimpleBarChartBuilder
     );
 
 })();
