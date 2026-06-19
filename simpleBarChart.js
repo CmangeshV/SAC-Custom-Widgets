@@ -2,22 +2,29 @@
 
     class SimpleBarChart extends HTMLElement {
 
-        constructor() {
-            super();
-        }
-
         connectedCallback() {
-            this.innerHTML = "<h2>Waiting for Data...</h2>";
+            this.innerHTML = "<h2>Check Console</h2>";
         }
 
-       onCustomWidgetAfterUpdate(changedProperties) {
+        onCustomWidgetAfterUpdate(changedProperties) {
 
-     console.log("Object Keys");
-    console.log(Object.keys(this));
+            console.log("===== AFTER UPDATE =====");
 
-    console.log("Widget Object");
-    console.log(this);
-}
+            console.log(changedProperties);
+
+            console.log("THIS:", this);
+
+            console.log("KEYS:", Object.keys(this));
+
+            if (this.dataBindings) {
+                console.log("dataBindings:", this.dataBindings);
+            }
+
+            if (this.dataBinding) {
+                console.log("dataBinding:", this.dataBinding);
+            }
+        }
+    }
 
     customElements.define(
         "com-demo-simplebarchart",
